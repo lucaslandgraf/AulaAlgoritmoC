@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 int main()
 {
@@ -12,7 +11,7 @@ int main()
     scanf("%d", &num);
 
     for(int i = 1; i <= 10; i++){
-        conta = pow(num, 1) * i;
+        conta = num * i;
         printf("%d \t", conta);
     }
 
