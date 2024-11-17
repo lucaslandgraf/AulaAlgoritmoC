@@ -1,3 +1,10 @@
+/*Escreva um programa que leia o número de lados de um polígono regular e a medida do lado (em cm). Crie uma função que receba como parâmetros o número de lados e a medida dos lados do polígono, e a função deve calcular e imprimir:
+
+Se o número de lados for igual a 3, escrever "TRIÂNGULO" e o valor do seu perímetro;
+Se o número de lados for igual a 4, escrever "QUADRADO" e o valor da sua área;
+Se o número de lados for igual a 5, escrever "PENTÁGONO".
+Observação: O usuário só pode informar os valores 3, 4 ou 5 para o número de lados. Valide essa entrada. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
