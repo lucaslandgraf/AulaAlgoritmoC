@@ -1,3 +1,9 @@
+/* Escreva um programa que leia 5 n´umeros inteiros positivos (utilize uma função que
+leia esse número e verifique se ele é positivo). Para cada número informado escrever
+a soma de seus divisores (exceto ele mesmo). Utilize a função SomaDivisores para
+obter a soma;
+Exemplo: Para o valor 8: 1+2+4 = 7. */
+
 #include <stdio.h>
 #include <stdlib.h>
 
