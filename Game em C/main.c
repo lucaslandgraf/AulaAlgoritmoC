@@ -4,15 +4,16 @@
 
 struct jogador {
     char nome[50];
-    int tentativas;
+    int tentativas[100]; // Vetor para armazenar os palpites
+    int total_tentativas; // Contador de tentativas
 };
 
 void jogo() {
     int iniciar, palpite, num_secreto;
     struct jogador a1;
-    a1.tentativas = 0;
+    a1.total_tentativas = 0;
 
-    // Gera o número secreto
+    // Gera o numero
     srand(time(NULL));
     num_secreto = (rand() % 100) + 1;
 
@@ -35,15 +36,22 @@ void jogo() {
                     return;
                 }
 
-                a1.tentativas++;
+                a1.tentativas[a1.total_tentativas] = palpite;
+                a1.total_tentativas++;
 
                 if (palpite < num_secreto) {
                     printf("Eh um numero mais alto\n");
                 } else if (palpite > num_secreto) {
                     printf("Eh um numero mais baixo\n");
                 } else {
-                    printf("ACERTOU! O numero era %d. Voce precisou de %d tentativas.\n",
-                           num_secreto, a1.tentativas);
+                    printf("PARABENS %s VOCE ACERTOU! O numero era %d. Voce precisou de %d tentativas.\n", a1.nome, num_secreto, a1.total_tentativas);
+
+                    // Mostra o histÃ³rico de palpites
+                    printf("Seus palpites foram: ");
+                    for (int i = 0; i < a1.total_tentativas; i++) {
+                        printf("%d ", a1.tentativas[i]);
+                    }
+                    printf("\n");
                     return;
                 }
             } while (1);
@@ -51,7 +59,6 @@ void jogo() {
         case 2:
             printf("Nesse jogo, o computador escolhe um numero aleatorio entre 1 e 100.\n");
             printf("Seu objetivo e adivinhar o numero usando o menor numero de tentativas.\n");
-            printf("Voce pode sair digitando 0 a qualquer momento.\n");
             break;
 
         case 3:
